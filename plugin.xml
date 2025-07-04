@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.example.myPlugin"
+    version="1.0.0">
+    <name>MyPlugin</name>
+    <js-module src="www/MyPlugin.js" name="MyPlugin">
+        <clobbers target="MyPlugin" />
+    </js-module>
+
+    <platform name="android">
+
+    <!-- <config-file parent="/*" target="app/build.gradle">
+            <dependency>
+                <groupId>com.yourlibrary</groupId>
+                <artifactId>yourlibrary</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </config-file> -->
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MyPlugin">
+                <param name="android-package" value="com.example.myPlugin.MyPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/MyPlugin.java" target-dir="src/main/java/com/example/myPlugin" />
+    </platform>
+</plugin>
+
+
+
