@@ -130,17 +130,17 @@ public class MyPlugin extends CordovaPlugin  {
             Log.d("sAllData1", "" + sAllData1);
 
             // Merchant details
-            String sMid = "18999"; //18999
-            String sSecret = "RbVqe3xTjiwvlYCB";  //RbVqe3xTjiwvlYCB prod
-            String sUserName = "2374952";  //2374952  prod
-            String sPassword = "EpSl3xNJ";  //EpSl3xNJ  prod
+            String sMid = "";
+            String sSecret = "";
+            String sUserName = "";
+            String sPassword = "";
 
-            String merdom = "https://airpayqa1.nowpay.co.in";
-            String successUrl = "https://airpayqa1.nowpay.co.in/form/payment-response";//https://apple.nowpay.co.in/airpay_php_v3/responsefromairpay.php
-            String failureUrl = "https://airpayqa1.nowpay.co.in/form/payment-response"; //https://apple.nowpay.co.in/airpay_php_v3/responsefromairpay.php
+            String merdom = "";
+            String successUrl = "";
+            String failureUrl = "";
 
-            String client_id = "4b3adc";
-            String client_secret = "51d68722bba2b4df096262c326bd24bb";
+            String client_id = "";
+            String client_secret = "";
             // private key
             String sTemp = sSecret + "@" + sUserName + ":|:" + sPassword;
             String sPrivateKey = Utils.sha256(sTemp);
@@ -179,12 +179,12 @@ public class MyPlugin extends CordovaPlugin  {
             builder.setTxnSubType(txnSubtype);
             builder.setChmod("");
             builder.setChecksum(sChecksum1);
-            builder.setMerDom(merdom);//airpayqa1 //prod  //apple staging
+            builder.setMerDom(merdom);
             builder.setSuccessUrl(successUrl);
             builder.setFailedUrl(failureUrl);
             builder.setLanguage("EN");
-            builder.setClient_id(client_id);  //4b3adc  prod   74 staging
-            builder.setClient_secret(client_secret); //51d68722bba2b4df096262c326bd24bb   //prod   0862d4626be90bf00756f672087a1c78 // staging
+            builder.setClient_id(client_id);
+            builder.setClient_secret(client_secret);
             builder.setGrant_type("client_credentials");
             builder.setAesDesKey(sTemp3);
             if (!TextUtils.isEmpty(txnSubtype) && txnSubtype.equals("12")) {
